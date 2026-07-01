@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="exam-container">
+        <div class="top-bar">
+            <button onclick="goHome()">Home</button>
+            <div id="timer">--:--</div>
+            <button onclick="checkSubmit()">Submit</button>
+        </div>
+        <div id="question-box"></div>
+        <div class="nav-container">
+            <button onclick="changeQ(-1)">Previous</button>
+            <button onclick="changeQ(1)">Next</button>
+        </div>
+        
+        <div id="indicator" class="indicator"></div>
+        
+    </div>
+
+    <div id="result-modal" class="modal">
+        <div class="modal-content">
+            <h2 id="modal-title"></h2>
+            <p id="modal-body"></p>
+            <div id="modal-actions-container" class="modal-actions"></div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
