@@ -7,9 +7,54 @@
     <title>SSW Agriculture</title>
 </head>
 <body>
+
     <div class="exam-container">
         
-        <h1>SSW Agriculture</h1>
+       <!-- Header කොටස -->
+<div class="header-bar">
+    <h1 class="header-title">SSW Agriculture</h1>
+    <div class="contact-btn" onclick="toggleModal()">Contact</div>
+</div>
+
+<!-- Modal Box එක -->
+<div id="contactModal" class="modal">
+    <br>
+    <br>
+    <br>
+    <h3 style="margin-top: 0; color: #777;">අපට කියන්න</h3>
+    <p style="font-size: 14px; color: #999;">
+        මෙම වෙබ් සයිට් එක තවදුරටත් දියුණු කිරීමට ඔබගේ යෝජනා සහ අදහස් ඉතා වටිනවා.
+        ඔබට ඇති ගැටලු වාර්තා කිරීමට හෝ නව දියුණු කිරීම් සඳහා ඔබේ අදහස් අප සමඟ බෙදා ගැනීමට පහතින් සම්බන්ධ වන්න. 
+        ඒ වගේම ටෙලිග්‍රෑම් සමූහයට (Telegram Group) සම්බන්ධ වී නවතම යාවත්කාලීන කිරීම් සහ දැනුම්දීම් ලබා ගන්න.
+        ප්‍රශ්න හෝ පේපර් සම්බන්ධ ගැටලු හා වෙනත් ගැටලු ඇත්නම් ඒවාද යොමු කරන්න. 
+
+    </p>
+    
+    <div class="social-icons">
+        <a href="https://t.me/sswagry" target="_blank"><img src="telegram.png" alt="Telegram"></a>
+        <!-- WhatsApp Icon එකට පණිවිඩය සහිත ලින්ක් එක එකතු කරන ලදී -->
+        <a href="https://wa.me/94750134750?text=SSW%20Agrycuture%20web%20site%20%E0%B6%91%E0%B6%9A%20%E0%B6%9C%E0%B7%90%E0%B6%B1:%20" target="_blank"><img src="whatsapp.jpeg" alt="WhatsApp"></a>
+    </div>
+
+    <hr style="border: 0; border-top: 1px solid #ddd; margin: 15px 0;">
+
+    <button class="modal-close-btn" onclick="toggleModal()">Close</button>
+</div>
+
+<script>
+    function toggleModal() {
+        const modal = document.getElementById('contactModal');
+        
+        if (modal.style.display === 'block') {
+            modal.style.display = 'none';
+            document.body.classList.remove('no-scroll');
+        } else {
+            modal.style.display = 'block';
+            document.body.classList.add('no-scroll');
+        }
+    }
+</script>
+
         
         <div style="background: #fef7ff; padding: 15px; border-radius: 15px; margin-bottom: 20px;">
             <h3>1. අභ්‍යාස සහ විභාග</h3>
@@ -18,10 +63,10 @@
             <button style="width: 100%; margin-bottom: 15px;" onclick="window.open('https://gnrzoop.github.io/sswagrysinhala/', '_blank')">අභ්‍යාස වෙබ් පිටුව</button>
 
             <p>විභාග ප්‍රශ්න</p>
-<select id="paper-select" style="width: 100%; padding: 12px 20px; margin-bottom: 10px; border-radius: 25px; border: 2px solid #000000; background: #ffffff; -webkit-appearance: none; -moz-appearance: none; appearance: none; outline: none;"></select>
+            <select id="paper-select" style="width: 100%; padding: 12px 20px; margin-bottom: 10px; border-radius: 25px; border: 2px solid #000000; background: #ffffff; -webkit-appearance: none; -moz-appearance: none; appearance: none; outline: none;"></select>
 
-<input type="number" id="time-input" placeholder="කාලය (විනාඩි 20 බැගින්)" style="width: 100%; padding: 12px 20px; margin-bottom: 10px; border-radius: 25px; border: 2px solid #000000; background: #ffffff; -webkit-appearance: none; -moz-appearance: none; appearance: none; box-sizing: border-box; outline: none;">
-<button style="width: 100%;" onclick="startExam()">විභාගය පටන් ගන්න</button>
+            <input type="number" id="time-input" placeholder="කාලය (විනාඩි 20 බැගින්)" style="width: 100%; padding: 12px 20px; margin-bottom: 10px; border-radius: 25px; border: 2px solid #000000; background: #ffffff; -webkit-appearance: none; -moz-appearance: none; appearance: none; box-sizing: border-box; outline: none;">
+            <button style="width: 100%;" onclick="startExam()">විභාගය පටන් ගන්න</button>
         </div>
 
         <div style="background: #f4f4f4; padding: 15px; border-radius: 15px;">
@@ -52,7 +97,6 @@
         </div>
 
     <script>
-        // වර්තමාන වර්ෂය ස්වයංක්‍රීයව යාවත්කාලීන කිරීම
         const currentYear = new Date().getFullYear();
         document.getElementById('year-display').innerText = currentYear;
         document.getElementById('copy-year').innerText = currentYear;
