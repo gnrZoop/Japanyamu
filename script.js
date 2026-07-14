@@ -89,12 +89,12 @@ function showResults() {
     isFinished = true;
     clearInterval(timerInterval);
     let score = userAnswers.filter((a,i) => a === paper.questions[i].options[0]).length;
-    let res = (score / paper.questions.length) * 100;
+    let res = Math.round((score / paper.questions.length) * 100); // මෙතන වෙනස් කරන්න
     
     render();
     
     let status = res >= 65 ? '<span class="pass">PASS!</span>' : '<span class="fail">FAIL!</span>';
-    showModal("ප්‍රතිඵලය", `ලකුණු: ${score}<br>ප්‍රතිශතය: ${res}%<br><h3>${status}</h3>`);
+    showModal("ප්‍රතිඵලය", `නිවැරදි පිළිතුරු ගණන: ${score}<br>ප්‍රතිශතය: ${res}%<br><h3>${status}</h3>`);
 }
 
 render();
